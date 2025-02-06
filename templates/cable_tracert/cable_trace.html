@@ -1,5 +1,8 @@
 {% extends 'generic/object.html' %}
 {% block content %}
+<h1>Cable Trace Details</h1>
+  <pre>{{ object.path|json_script:"path-data" }}</pre>
+  <a href="{% url 'plugins:cable_tracer:cabletrace_list' %}">Back to List</a>
   <div class="row">
     <div class="col col-md-12">
       <div class="card">
