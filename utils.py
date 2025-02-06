@@ -13,7 +13,7 @@ def trace_cable(start_device, start_port):
         cable = Cable.objects.filter(a_terminations__device=current_device, a_terminations__name=current_port).first()
         if not cable:
             cable = Cable.objects.filter(b_terminations__device=current_device, b_terminations__name=current_port).first()
-        
+
         if not cable:
             break  # Кабель не найден, завершаем трассировку
 
