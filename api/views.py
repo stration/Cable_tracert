@@ -1,5 +1,6 @@
+# cable_tracer/api/views.py
 from netbox.api.viewsets import NetBoxModelViewSet
-from .models import CableTrace
+from cable_tracer.models import CableTrace  # Используйте абсолютный импорт
 from .serializers import CableTraceSerializer
 
 class CableTraceViewSet(NetBoxModelViewSet):
