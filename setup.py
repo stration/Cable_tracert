@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='cable_tracert',
+    name='cable_tracer',
     version='0.1.0',  # Установите версию по умолчанию
     packages=find_packages(),
     include_package_data=True,
@@ -11,7 +11,7 @@ setup(
     ],
     entry_points={
         'netbox_plugins': [
-            'cable_tracert = cable_tracert.plugin_config:CableTracertConfig',  # Замените на вашу точку входа
+            'cable_tracer = cable_tracer.plugin_config:CableTracertConfig',  # Замените на вашу точку входа
         ],
     },
 )
