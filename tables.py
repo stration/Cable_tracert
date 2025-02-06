@@ -1,10 +1,12 @@
-import django_tables2 as tables
-from .models import CableTrace
+# cable_tracer/tables.py
+from netbox.tables import NetBoxTable  # Используйте NetBoxTable для таблиц
+from django_tables2 import Column  # Импортируйте Column из django_tables2
+from cable_tracer.models import CableTrace  # Абсолютный импорт модели
 
-class CableTraceTable(tables.Table):
-    start_device = tables.Column(linkify=True)
-    end_device = tables.Column(linkify=True)
+class CableTraceTable(NetBoxTable):  # Наследование от NetBoxTable
+    start_device = Column(linkify=True)  # Колонка с ссылкой
+    end_device = Column(linkify=True)  # Колонка с ссылкой
 
     class Meta:
-        model = CableTrace
-        fields = ('start_device', 'start_port', 'end_device', 'end_port')
+        model = CableTrace  # Модель для таблицы
+        fields = ('start_device', 'start_port', 'end_device', 'end_port')  # Поля для отображения
