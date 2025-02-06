@@ -1,8 +1,9 @@
+# cable_tracer/models.py
 from django.db import models
-from netbox.models import NetBoxModel
-from dcim.models import Cable, Device
+from netbox.models import NetBoxModel  # Используйте NetBoxModel
+from dcim.models import Device
 
-class CableTrace(NetBoxModel):
+class CableTrace(NetBoxModel):  # Наследование от NetBoxModel
     start_device = models.ForeignKey(
         to=Device,
         on_delete=models.CASCADE,
