@@ -1,7 +1,8 @@
+# cable_tracer/views.py
 from netbox.views import generic
-from .models import CableTrace
-from .tables import CableTraceTable
-from .forms import CableTraceForm
+from cable_tracer.models import CableTrace  # Абсолютный импорт
+from cable_tracer.tables import CableTraceTable
+from cable_tracer.forms import CableTraceForm
 
 class CableTraceListView(generic.ObjectListView):
     queryset = CableTrace.objects.all()
