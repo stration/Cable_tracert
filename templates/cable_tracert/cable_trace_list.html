@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Cable Traces</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Start Device</th>
+        <th>Start Port</th>
+        <th>End Device</th>
+        <th>End Port</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for trace in object_list %}
+      <tr>
+        <td>{{ trace.start_device }}</td>
+        <td>{{ trace.start_port }}</td>
+        <td>{{ trace.end_device }}</td>
+        <td>{{ trace.end_port }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="{% url 'plugins:cable_tracer:cabletrace_add' %}">Add Cable Trace</a>
+{% endblock %}
