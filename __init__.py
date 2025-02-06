@@ -1,8 +1,9 @@
 from netbox.plugins import PluginConfig
+from .plugin_config import config
 from .version import __version__
 
 class CableTracertConfig(PluginConfig):
-    name = 'cable_tracert'
+    name = 'cable_tracer'
     verbose_name = 'Cable Tracer'
     description = 'A plugin to trace cables to their endpoints in NetBox.'
     version = '0.1'
